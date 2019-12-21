@@ -1,0 +1,213 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "TEEKAM\n",
+      "DAS\n",
+      "28\n",
+      "KHIPRO\n",
+      "{'first_name': 'TEEKAM', 'last_name': 'DAS', 'age': 28, 'city': 'KHIPRO', 'Qualification': 'intermediate'}\n",
+      "{'first_name': 'TEEKAM', 'last_name': 'DAS', 'age': 28, 'city': 'KHIPRO', 'Qualification': 'intermediate', 'High Qualification': 'Gragduate'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Assignment No.4\n",
+    "\n",
+    "# Question No.1\n",
+    "\n",
+    "Name = {\n",
+    "    'first_name': 'TEEKAM',\n",
+    "    'last_name': 'DAS',\n",
+    "    'age': 28,\n",
+    "    'city': 'KHIPRO',\n",
+    "    }\n",
+    "print(Name['first_name'])\n",
+    "print(Name['last_name'])\n",
+    "print(Name['age'])\n",
+    "print(Name['city'])\n",
+    "Name[\"Qualification\"]='intermediate'\n",
+    "print(Name)\n",
+    "Name.update({'High Qualification' : 'Gragduate'})\n",
+    "print(Name)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Karachi is in Pakistan.\n",
+      "  It has a population of about 25000000.\n",
+      "  The K2 mountains are nearby.\n",
+      "\n",
+      "Islamabad is in Pakistan.\n",
+      "  It has a population of about 600000.\n",
+      "  The Margla mountains are nearby.\n",
+      "\n",
+      "Venus is in Italy.\n",
+      "  It has a population of about 60000.\n",
+      "  The No Mountain mountains are nearby.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question No.2\n",
+    "MetroPolitian = {\n",
+    "    'karachi': {\n",
+    "        'country': 'Pakistan',\n",
+    "        'population': 25000000,\n",
+    "        'nearby mountains': 'K2',\n",
+    "        },\n",
+    "    'islamabad': {\n",
+    "        'country': 'Pakistan',\n",
+    "        'population': 600000,\n",
+    "        'nearby mountains': 'Margla',\n",
+    "        },\n",
+    "    'Venus': {\n",
+    "        'country': 'italy',\n",
+    "        'population': 60000,\n",
+    "        'nearby mountains': 'No mountain',\n",
+    "        }\n",
+    "    }\n",
+    "\n",
+    "for city, city_info in MetroPolitian.items():\n",
+    "    country = city_info['country'].title()\n",
+    "    population = city_info['population']\n",
+    "    mountains = city_info['nearby mountains'].title()\n",
+    "\n",
+    "    print(\"\\n\" + city.title() + \" is in \" + country + \".\")\n",
+    "    print(\"  It has a population of about \" + str(population) + \".\")\n",
+    "    print(\"  The \" + mountains + \" mountains are nearby.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "How old are you?\n",
+      "Enter 'stop' when you are finished. 10\n",
+      "  Your ticket is only for $10.\n",
+      "How old are you?\n",
+      "Enter 'stop' when you are finished. 2\n",
+      "  You get in free!\n",
+      "How old are you?\n",
+      "Enter 'stop' when you are finished. 6\n",
+      "  Your ticket is only for $10.\n",
+      "How old are you?\n",
+      "Enter 'stop' when you are finished. 25\n",
+      "  Your ticket is only for $15.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question No.3\n",
+    "\n",
+    "prompt = \"How old are you?\"\n",
+    "prompt += \"\\nEnter 'stop' when you are finished. \"\n",
+    "\n",
+    "while True:\n",
+    "    old = input(prompt)\n",
+    "    if old == 'stop':\n",
+    "        break\n",
+    "    old = int(old)\n",
+    "\n",
+    "    if old < 3:\n",
+    "        print(\"  You get in free!\")\n",
+    "    elif old < 13:\n",
+    "        print(\"  Your ticket is only for $10.\")\n",
+    "    else:\n",
+    "        print(\"  Your ticket is only for $15.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question No.4\n",
+    "\n",
+    "def favorite_book(title):\n",
+    "    \"\"\"Display a message about someone's favorite book.\"\"\"\n",
+    "    print(title + \" is one of my favorite books.\")\n",
+    "\n",
+    "favorite_book('The Catcher in the Rye by J.D. Salinger')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Question No. 5\n",
+    "\n",
+    "import random\n",
+    "randomNumber = random.randrange(1,30)\n",
+    "print(\"Random number has been generated\")\n",
+    "guessed = False\n",
+    "while guessed==False:\n",
+    "    userInput = int(input(\"Your guess please: \"))\n",
+    "    if userInput==randomNumber:\n",
+    "        guessed = True\n",
+    "        print(\"Well done!\")\n",
+    "    elif userInput>100:\n",
+    "        print(\"Our guess range is between 1 and 30, please try a bit lower\")\n",
+    "    elif userInput<0:\n",
+    "        print(\"Our guess range is between 1 and 30, please try a bit higher\")\n",
+    "    elif userInput>randomNumber:\n",
+    "        print(\"Try one more time, a bit lower\")\n",
+    "    elif userInput < randomNumber:\n",
+    "        print(\"Try one more time, a bit higher\")\n",
+    "\n",
+    "print(\"End of program\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
